@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Restaurant POS System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="container mx-auto bg-white shadow-md rounded-lg p-8">
+        <h1 class="text-2xl font-semibold text-center text-gray-800 mb-6">New Restaurant POS System</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="menu-section">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Menu</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="menu-item bg-gray-50 rounded-lg shadow-sm p-4 flex flex-col justify-between">
+                        <img src="img/pasta.jpg" alt="Pasta" class="rounded-md mb-2 h-32 object-cover w-full">
+                        <h3 class="text-lg font-semibold text-gray-800">Pasta</h3>
+                        <p class="text-gray-600 mb-2">150 PHP</p>
+                        <div class="flex items-center space-x-2">
+                            <input type="number" value="1" min="1" class="w-16 px-2 py-1 border border-gray-300 rounded-md text-center focus:ring-blue-500 focus:border-blue-500">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300" onclick="addToOrder('Pasta', 150)">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item bg-gray-50 rounded-lg shadow-sm p-4 flex flex-col justify-between">
+                        <img src="img/pizza.jpg" alt="Pizza" class="rounded-md mb-2 h-32 object-cover w-full">
+                        <h3 class="text-lg font-semibold text-gray-800">Pizza</h3>
+                        <p class="text-gray-600 mb-2">200 PHP</p>
+                        <div class="flex items-center space-x-2">
+                            <input type="number" value="1" min="1" class="w-16 px-2 py-1 border border-gray-300 rounded-md text-center focus:ring-blue-500 focus:border-blue-500">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300" onclick="addToOrder('Pizza', 200)">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item bg-gray-50 rounded-lg shadow-sm p-4 flex flex-col justify-between">
+                        <img src="img/salad.jpg" alt="Salad" class="rounded-md mb-2 h-32 object-cover w-full">
+                        <h3 class="text-lg font-semibold text-gray-800">Salad</h3>
+                        <p class="text-gray-600 mb-2">100 PHP</p>
+                        <div class="flex items-center space-x-2">
+                            <input type="number" value="1" min="1" class="w-16 px-2 py-1 border border-gray-300 rounded-md text-center focus:ring-blue-500 focus:border-blue-500">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300" onclick="addToOrder('Salad', 100)">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item bg-gray-50 rounded-lg shadow-sm p-4 flex flex-col justify-between">
+                        <img src="img/dessert.jpg" alt="Dessert" class="rounded-md mb-2 h-32 object-cover w-full">
+                        <h3 class="text-lg font-semibold text-gray-800">Dessert</h3>
+                        <p class="text-gray-600 mb-2">80 PHP</p>
+                        <div class="flex items-center space-x-2">
+                            <input type="number" value="1" min="1" class="w-16 px-2 py-1 border border-gray-300 rounded-md text-center focus:ring-blue-500 focus:border-blue-500">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300" onclick="addToOrder('Dessert', 80)">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item bg-gray-50 rounded-lg shadow-sm p-4 flex flex-col justify-between">
+                        <img src="img/burger.jpg" alt="Burger" class="rounded-md mb-2 h-32 object-cover w-full">
+                        <h3 class="text-lg font-semibold text-gray-800">Burger</h3>
+                        <p class="text-gray-600 mb-2">120 PHP</p>
+                        <div class="flex items-center space-x-2">
+                            <input type="number" value="1" min="1" class="w-16 px-2 py-1 border border-gray-300 rounded-md text-center focus:ring-blue-500 focus:border-blue-500">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300" onclick="addToOrder('Burger', 120)">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item bg-gray-50 rounded-lg shadow-sm p-4 flex flex-col justify-between">
+                        <img src="img/fries.jpg" alt="Fries" class="rounded-md mb-2 h-32 object-cover w-full">
+                        <h3 class="text-lg font-semibold text-gray-800">Fries</h3>
+                        <p class="text-gray-600 mb-2">70 PHP</p>
+                        <div class="flex items-center space-x-2">
+                            <input type="number" value="1" min="1" class="w-16 px-2 py-1 border border-gray-300 rounded-md text-center focus:ring-blue-500 focus:border-blue-500">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300" onclick="addToOrder('Fries', 70)">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item bg-gray-50 rounded-lg shadow-sm p-4 flex flex-col justify-between">
+                        <img src="img/soda.jpg" alt="Soda" class="rounded-md mb-2 h-32 object-cover w-full">
+                        <h3 class="text-lg font-semibold text-gray-800">Soda</h3>
+                        <p class="text-gray-600 mb-2">50 PHP</p>
+                        <div class="flex items-center space-x-2">
+                            <input type="number" value="1" min="1" class="w-16 px-2 py-1 border border-gray-300 rounded-md text-center focus:ring-blue-500 focus:border-blue-500">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300" onclick="addToOrder('Soda', 50)">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item bg-gray-50 rounded-lg shadow-sm p-4 flex flex-col justify-between">
+                        <img src="img/icecream.jpg" alt="Ice Cream" class="rounded-md mb-2 h-32 object-cover w-full">
+                        <h3 class="text-lg font-semibold text-gray-800">Ice Cream</h3>
+                        <p class="text-gray-600 mb-2">90 PHP</p>
+                        <div class="flex items-center space-x-2">
+                            <input type="number" value="1" min="1" class="w-16 px-2 py-1 border border-gray-300 rounded-md text-center focus:ring-blue-500 focus:border-blue-500">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300" onclick="addToOrder('Ice Cream', 90)">Add to Order</button>
+                        </div>
+                    </div>
+                    <div class="menu-item bg-gray-50 rounded-lg shadow-sm p-4 flex flex-col justify-between">
+                        <img src="img/chicken.jpg" alt="Fried Chicken" class="rounded-md mb-2 h-32 object-cover w-full">
+                        <h3 class="text-lg font-semibold text-gray-800">Fried Chicken</h3>
+                        <p class="text-gray-600 mb-2">85 PHP</p>
+                        <div class="flex items-center space-x-2">
+                            <input type="number" value="1" min="1" class="w-16 px-2 py-1 border border-gray-300 rounded-md text-center focus:ring-blue-500 focus:border-blue-500">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300" onclick="addToOrder('Fried Chicken', 85)">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-section bg-gray-50 rounded-lg shadow-sm p-6">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Ordered Items</h2>
+                <ul id="order-list" class="space-y-3">
+                </ul>
+                <div class="mt-6 pt-4 border-t border-gray-200">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Total:</h3>
+                        <p id="order-total" class="text-lg font-bold text-gray-900">0 PHP</p>
+                    </div>
+                    <div class="mb-4">
+                        <label for="amount-received" class="block text-gray-700 text-sm font-bold mb-2">Amount Received:</label>
+                        <input type="number" id="amount-received" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter amount">
+                    </div>
+                    <button id="pay-button" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline transition duration-300 w-full" onclick="payOrder()" disabled>Pay!</button>
+                    <button id="print-button" class="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline transition duration-300 w-full" onclick="printReceipt()">Print Receipt</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const orderList = document.getElementById('order-list');
+        const orderTotalDisplay = document.getElementById('order-total');
+        const amountReceivedInput = document.getElementById('amount-received');
+        const payButton = document.getElementById('pay-button');
+        const printButton = document.getElementById('print-button');
+
+        let order = [];
+        let total = 0;
+
+        function addToOrder(itemName, price) {
+            const menuItem = Array.from(document.querySelectorAll('.menu-item')).find(item =>
+                item.querySelector('h3').textContent.includes(itemName)
+            );
+            const quantityInput = menuItem ? menuItem.querySelector('input[type="number"]') : null;
+
+            if (quantityInput) {
+                const quantity = parseInt(quantityInput.value);
+
+                if (quantity > 0) {
+                    const existingItem = order.find(item => item.name === itemName);
+                    if (existingItem) {
+                        existingItem.quantity += quantity;
+                        existingItem.price = price; 
+                    } else {
+                        order.push({ name: itemName, price: price, quantity: quantity });
+                    }
+                    updateOrderDisplay();
+                    quantityInput.value = 1; 
+                } else {
+                    alert('Please enter a valid quantity.');
+                }
+            } else {
+                console.error(`Could not find menu item with name: ${itemName}`);
+            }
+        }
+
+        function updateOrderDisplay() {
+            orderList.innerHTML = '';
+            total = 0;
+            order.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.className = "flex justify-between items-center text-gray-700";
+                listItem.innerHTML = `
+                    <span>${item.name} x ${item.quantity}</span>
+                    <span>${(item.price * item.quantity).toFixed(2)} PHP</span>
+                `;
+                orderList.appendChild(listItem);
+                total += item.price * item.quantity;
+            });
+            orderTotalDisplay.textContent = total.toFixed(2) + " PHP";
+            payButton.disabled = total === 0; 
+            payButton.classList.toggle('opacity-50', total === 0); 
+        }
+
+        function payOrder() {
+            if (total === 0) {
+                alert("Your order is empty!");
+                return;
+            }
+            const amountReceived = parseFloat(amountReceivedInput.value);
+            if (isNaN(amountReceived) || amountReceived < total) {
+                alert('Insufficient amount received.');
+            } else {
+                const change = amountReceived - total;
+                alert(`Payment successful! Change: ${change.toFixed(2)} PHP`);
+                order = [];
+                total = 0;
+                updateOrderDisplay();
+                amountReceivedInput.value = ''; 
+            }
+        }
+
+        function printReceipt() {
+            if (total === 0) {
+                alert("Cannot print an empty receipt.");
+                return;
+            }
+            let receiptContent = "New Restaurant Name\n"; 
+            receiptContent += "--------------------------\n";
+            receiptContent += "Order Details:\n";
+            order.forEach(item => {
+                receiptContent += `${item.name} x ${item.quantity} \t${(item.price * item.quantity).toFixed(2)} PHP\n`;
+            });
+            receiptContent += "--------------------------\n";
+            receiptContent += `Total: \t\t${total.toFixed(2)} PHP\n`;
+            receiptContent += "--------------------------\n";
+            receiptContent += "Thank you for your order!";
+
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`<pre>${receiptContent}</pre>`);
+            printWindow.document.close();
+            printWindow.print();
+            printWindow.close();
+        }
+    </script>
+</body>
+</html>
